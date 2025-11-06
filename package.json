@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "database": "^0.0.2",
+    "express": "^5.1.0",
+    "postgres": "^3.4.7"
+     
+
+  }
+}
