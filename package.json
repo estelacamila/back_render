@@ -5,7 +5,8 @@
     "database": "^0.0.2",
     "express": "^5.1.0",
     "postgres": "^3.4.7"
-     
-
+  },
+  "scripts": {
+    "prod": "node backEnd/app.js"
   }
 }
