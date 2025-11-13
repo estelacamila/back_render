@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 const routes = express.Router();
 
-
+/*Funcional*/
 routes.get('/Usuarios', async (req, res) => {
     try {
         const usuarios = await sql`SELECT email FROM Cadastrar`;
@@ -15,7 +15,7 @@ routes.get('/Usuarios', async (req, res) => {
     }
 });
 
-
+/*Ok */
 routes.post('/Cadastrar', async (req, res) => {
     const { nome, email, senha } = req.body;
 
@@ -55,7 +55,7 @@ routes.post('/Cadastrar', async (req, res) => {
     }
 });
 
-
+/*Ok*/ 
 routes.post('/Login', async (req, res) => {
     const { email, senha } = req.body;
     try {
@@ -82,7 +82,7 @@ routes.post('/Login', async (req, res) => {
 
 
 
-
+//Ok
 routes.post("/Comunidade/Mensagem", async (req, res) => {
     const { usuario_id, usuario_nome, mensagem, data } = req.body;
 
@@ -103,7 +103,7 @@ routes.post("/Comunidade/Mensagem", async (req, res) => {
     }
 });
 
-
+//ok
 routes.put("/Perfil/:id", async (req, res) => {
   const { id } = req.params;
   const { nome, foto, senha } = req.body;
@@ -144,7 +144,7 @@ routes.put("/Perfil/:id", async (req, res) => {
 });
 
 
-
+//ok
 routes.get("/Comunidade/Mensagem", async (req, res) => {
     try {
         const mensagens = await sql`
@@ -161,7 +161,7 @@ routes.get("/Comunidade/Mensagem", async (req, res) => {
         res.status(500).json({ message: "Erro ao buscar mensagens", error });
     }
 });
-
+//ok
 routes.get("/Perfil/:id", async (req, res) => {
     const { id } = req.params;
 
@@ -183,7 +183,7 @@ routes.get("/Perfil/:id", async (req, res) => {
     }
 });
 
-
+//ok
 routes.get("/Comunidade/Mensagem/:usuario_id", async (req, res) => {
     const { usuario_id } = req.params;
 
@@ -201,7 +201,7 @@ routes.get("/Comunidade/Mensagem/:usuario_id", async (req, res) => {
     }
 });
 
-
+//ok
 routes.get("/Notas/:usuario_id", async (req, res) => {
     const { usuario_id } = req.params;
 
@@ -218,7 +218,7 @@ routes.get("/Notas/:usuario_id", async (req, res) => {
     }
 });
 
-
+//ok
 routes.post("/Notas", async (req, res) => {
     const { usuario_id, conteudo } = req.body;
 
@@ -243,7 +243,7 @@ routes.post("/Notas", async (req, res) => {
     }
 });
 
-
+//ok
 routes.put("/Notas/:id", async (req, res) => {
     const { id } = req.params;
     const { conteudo } = req.body;
@@ -265,7 +265,7 @@ routes.put("/Notas/:id", async (req, res) => {
         return res.status(500).json({ message: "Erro ao atualizar nota", error });
     }
 });
-
+//ok
 routes.delete("/Notas/:id", async (req, res) => {
     const { id } = req.params;
 
